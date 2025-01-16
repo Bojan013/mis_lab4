@@ -128,7 +128,23 @@ class _CalendarState extends State<Calendar> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Event Calendar')),
+      appBar: AppBar(
+        title: Text('Event Calendar'),
+        actions: [
+          IconButton(
+            icon: Icon(Icons.add),
+            onPressed: () {
+              if (_selectedDay != null) {
+                _showAddExamDialog();
+              } else {
+                ScaffoldMessenger.of(context).showSnackBar(
+                  SnackBar(content: Text('Please select a day first')),
+                );
+              }
+            },
+          ),
+        ],
+      ),
       body: Column(
         children: [
           TableCalendar(
