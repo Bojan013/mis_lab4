@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:latlong2/latlong.dart';
 import 'package:mis_lab4/models/exam.dart';
 import 'package:table_calendar/table_calendar.dart';
 
@@ -20,19 +21,22 @@ class _CalendarState extends State<Calendar> {
           id: '1',
           courseName: 'Mis',
           location: 'lab 138',
-          dateTime: DateTime(2025, 1, 20, 14, 30)),
+          dateTime: DateTime(2025, 1, 20, 14, 30),
+          coordinates: LatLng(41.9981, 21.4254)),
       Exam(
           id: '2',
           courseName: 'Aps',
           location: 'lab 13',
-          dateTime: DateTime(2025, 1, 20, 10, 0)),
+          dateTime: DateTime(2025, 1, 20, 10, 0),
+          coordinates: LatLng(41.9981, 21.4254)),
     ],
     _normalizeDate(DateTime(2025, 1, 22, 15, 30)): [
       Exam(
           id: '3',
           courseName: 'Kompjuterski mrezi i bezbednost',
           location: 'lab 200ab',
-          dateTime: DateTime(2025, 1, 22)),
+          dateTime: DateTime(2025, 1, 22),
+          coordinates: LatLng(41.9981, 21.4254)),
     ],
   };
 
